@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { useState, useEffect} from 'react'
 import Home from "./pages/Home"
 import Navbar from "./components/Navbar";
-
+import Mapa from "./pages/Mapa"
 
 
 
@@ -16,11 +16,12 @@ const serverIp = "http://192.168.1.7:3000/";
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/*<Navbar />*/}
 
 
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/mapa" element={<Mapa/>} />
       </Routes>
     </Router>
   );
