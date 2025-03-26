@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMapEvent, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
 const MapComponent = () => {
     const [posAtual,setPosAtual] = useState(null)
@@ -29,6 +30,7 @@ const MapComponent = () => {
             const { lat, lng } = event.latlng;
             console.log(`Clicked position: Latitude: ${lat}, Longitude: ${lng}`);
             setPontos((prevPontos) => [...prevPontos, [lat, lng]]);
+            
         });
         
         useMapEvent('moveend', (event) => {
@@ -77,6 +79,11 @@ const MapComponent = () => {
                         </Popup>
                     </Marker>
                 })}
+
+                
+                <Popup position={[20,20]}>
+                    gozaram
+                </Popup>
 
             </MapContainer>
             
